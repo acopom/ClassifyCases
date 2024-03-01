@@ -174,7 +174,7 @@ def multi2text(candidates):
         resstr +=  text
     return resstr
     
-genai.configure(api_key="AIzaSyBv61b6019I-FomMYQ0N4NYaREQ4K2k3R8")
+genai.configure(api_key="xxx-yyy")
 
 dlist = [
     '38239417',
