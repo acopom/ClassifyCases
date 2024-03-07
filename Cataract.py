@@ -8,139 +8,155 @@ from vertexai.preview.generative_models import GenerativeModel, Part
 import time
 import requests
 
-def step2(abstxt: str, model):
+def step2(qtext: str, model):
     response = model.generate_content(
-        "Read the following abstract: "+ abstxt + " Answer the question that does the patient have cataract surgery? Please answer yes, no, or no information.",
+        qtext + " Then, answer the following question: does the patient have cataract surgery? Please answer yes, no, or no information.",
     )
-    print(response.text)
-    if 'Yes' in str(response.text) or 'yes' in str(response.text):
+    candidates = response.candidates
+    restext = multi2text(candidates)
+    print(restext)
+    #print(response.text)
+    if 'Yes' in str(restext) or 'yes' in str(restext):
       print("Step10")
-      step10(abstxt, model)
-    elif 'No' in str(response.text) or 'no' in str(response.text):
+      step10(qtext, model)
+    elif 'No' in str(restext) or 'no' in str(restext):
       print("Step3")
-      step3(abstxt, model)
-    elif 'access' in str(response.text):
+      step3(qtext, model)
+    elif 'access' in str(restext):
       print("Try again")
       time.sleep(3)
-      step2(abstxt, model)
+      step2(qtext, model)
     else:
       print(" is an exception")
 
-def step3(abstxt: str, model):
+def step3(qtext: str, model):
     response = model.generate_content(
-        "Read the following abstract: "+ abstxt +" Answer the question that does the patient was diagnosed with cataract? Please answer yes, no, or no information.",
+        qtext +" Then, answer the following question: was the patient diagnosed with cataract? Please answer yes, no, or no information.",
     )
-    print(response.text)
-    if 'Yes' in str(response.text) or 'yes' in str(response.text) :
+    candidates = response.candidates
+    restext = multi2text(candidates)
+    print(restext)
+    if 'Yes' in str(restext) or 'yes' in str(restext) :
       print("Step8")
-      step8(abstxt, model)
-    elif 'No' in str(response.text) or 'no' in str(response.text) :
+      step8(qtext, model)
+    elif 'No' in str(restext) or 'no' in str(restext) :
       print("Step4")
-      step4(abstxt, model)
-    elif 'access' in str(response.text) :
+      step4(qtext, model)
+    elif 'access' in str(restext) :
       print("Try again")
       time.sleep(3)
-      step3(abstxt, model)
+      step3(qtext, model)
     else:
       print(" is an exception")
-      
-def step4(abstxt: str, model):
+    
+def step4(qtext: str, model):
     response = model.generate_content( 
-        "Read the following abstract: "+ abstxt +" Answer the question that is any exclusion DX code found. Please answer yes, no or no information.",
+        qtext +" Then, answer the following question: was the patient diagnosed with congenital, traumatic or juvenile cataract? Please answer yes, no or no information.",
     )
-    print(response.text)
-    if 'Yes' in str(response.text) or 'yes' in str(response.text) :
+    candidates = response.candidates
+    restext = multi2text(candidates)
+    print(restext)
+    if 'Yes' in str(restext) or 'yes' in str(restext) :
       print(" is excluded")
-    elif 'No' in str(response.text) or 'no' in str(response.text) :
+    elif 'No' in str(restext) or 'no' in str(restext) :
       print("Step5")
-      step5(abstxt, model)
-    elif 'access' in str(response.text) :
+      step5(qtext, model)
+    elif 'access' in str(restext) :
       print("Try again")
       time.sleep(3)
-      step4(abstxt, model)
+      step4(qtext, model)
     else:
       print(" is an exception")
 
-def step5(abstxt: str, model):
+def step5(qtext: str, model):
     response = model.generate_content(
-        "Read the following abstract: "+ abstxt +" Answer the question that are NLP or ICR Cataract found. Please answer yes, no or no information.",
+        qtext +" Then, answer the following question: are there the term Cataract found in the document? Please answer yes, no or no information.",
     )
-    print(response.text)
-    if 'Yes' in str(response.text) or 'yes' in str(response.text) :
+    candidates = response.candidates
+    restext = multi2text(candidates)
+    print(restext)
+    if 'Yes' in str(restext) or 'yes' in str(restext) :
       print("excluded")
-    elif 'No' in str(response.text) or 'no' in str(response.text) :
+    elif 'No' in str(restext) or 'no' in str(restext) :
       print("Step6")
-      step6(abstxt, model)
-    elif 'access' in str(response.text) :
+      step6(qtext, model)
+    elif 'access' in str(restext) :
       print("Try again")
       time.sleep(3)
-      step5(abstxt, model)
+      step5(qtext, model)
     else:
       print("an exception")
       
-def step6(abstxt: str, model):
+def step6(qtext: str, model):
     response = model.generate_content(
-        "Read the following abstract: "+ abstxt +" Answer the question that how long does the patient have optical exam. Please answer years only numerically. If there is no information about it, answer null",
+        qtext +" Then, answer the following question: how many years ago did the patient take optical examination. Please answer years only numerically. If there is no information about it, answer null",
     )
-    print(response.text)    
-    if 'access' in str(response.text) :
+    candidates = response.candidates
+    restext = multi2text(candidates)
+    print(restext)    
+    if 'access' in str(restext) :
       print('Try again')
       time.sleep(3)
-      step6(abstxt, model)
-    elif is_int(response.text):
-      if int(response.text) > 4 :
+      step6(qtext, model)
+    elif is_int(restext):
+      if int(restext) > 4 :
         print( 'excluded')
-      elif int(response.text) < 5 :
+      elif int(restext) < 5 :
         print("Step7")
-        step7(abstxt, model)
+        step7(qtext, model)
     else:
       print("an exception")
       
-def step7(abstxt: str, model):
+def step7(qtext: str, model):
     response = model.generate_content(
-        "Read the following abstract:" + abstxt+ " Answer the question how old is the patient. Please answer age only numerically. If there is no information, answer no.",
+        qtext+ " Then, answer the following question: how old is the patient? Please answer age only numerically. If there is no information, answer no information.",
     )
-    print(response.text)    
-    if 'access' in str(response.text) :
+    candidates = response.candidates
+    restext = multi2text(candidates)
+    print(restext)    
+    if 'access' in str(restext) :
       print('Try again')
       time.sleep(3)
-      step10(abstxt, model)
-    if is_int(response.text):
-      if int(response.text) > 49 :
+      step10(qtext, model)
+    if is_int(restext):
+      if int(restext) > 49 :
         print(' is a control')
-      elif int(response.text) < 50 :
+      elif int(restext) < 50 :
         print(' is excluded')
     else:
       print( " is an exception")
-
-
-def step8(abstxt: str, model):
+        
+def step8(qtext: str, model):
     response = model.generate_content(
-        "Read the following abstract:" + abstxt+ " Answer the question how many DX codes are there. Please answer the number only."
+        qtext+ " Then, answer the following question: how many cataract diagnosis in the document? Please answer the number only."
     )
+    candidates = response.candidates
+    restext = multi2text(candidates)
     print("Step10")
-    step10(abstxt, model)
+    step10(qtext, model)
 
-def step9(abstxt: str, model):
+def step9(qtext: str, model):
     response = model.generate_content(
-        "Read the following abstract: "+ abstxt +" Answer the question that are NLP or ICR Cataract found. Please answer yes or no."
+        qtext +" Then, answer the following question: are there the term Cataract found in the document? Please answer yes, no or no information.",
     )
-    print(response.text)
-    if 'Yes' in str(response.text) or 'yes' in str(response.text) :
+    candidates = response.candidates
+    restext = multi2text(candidates)
+    print(restext)
+    if 'Yes' in str(restext) or 'yes' in str(restext) :
       print("Step10")
-      step10(abstxt, model)
-    elif 'No' in str(response.text) or 'no' in str(response.text) :
+      step10(qtext, model)
+    elif 'No' in str(restext) or 'no' in str(restext) :
         print(' is excluded')
-    elif 'access' in str(response.text) :
+    elif 'access' in str(restext) :
       print("Try again")
       time.sleep(3)
-      step5(abstxt, model)
+      step5(qtext, model)
     else:
       print("an exception")
 
-def step10(abstxt: str, model):
+def step10(qtext: str, model):
     response = model.generate_content(
-        "Read the following abstract:" + abstxt+ " Answer the question how old is the patient. Please answer age only numerically.",
+        qtext+ " Then, answer the following question: how old is the patient. Please answer age only numerically.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -148,7 +164,7 @@ def step10(abstxt: str, model):
     if 'access' in str(restext) :
       print('Try again')
       time.sleep(3)
-      step10(abstxt, model)
+      step10(qtext, model)
     elif is_int(restext):
       if int(restext) > 49 :
         print(' is a case')
@@ -174,19 +190,27 @@ def multi2text(candidates):
         resstr +=  text
     return resstr
     
-genai.configure(api_key="xxx-yyy")
+genai.configure(api_key="xxx")
 
 dlist = [
-    '38239417',
+  #pmid
     '38068917',
     '37904374',
     '37899280',
 ]
 
+ulist = [
+  #pmc urls
+]
+
+
 for pmid in dlist:
-    r = requests.get("http://togows.org/entry/pubmed/"+docuri+"/abstract")
+#for docuri in ulist:    
+    r = requests.get("http://togows.org/entry/pubmed/"+pmid+"/abstract")
     abstxt = r.text
+    qtext = "Read the following abstract: "+abstxt
+    # qtext = "Read the following paper with url: " + docuri  
     model = genai.GenerativeModel('gemini-pro')
-    print(docuri)
+    print(pmid)
     print("Step2")
-    step2(abstxt, model)
+    step2(qtext, model)
