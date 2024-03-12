@@ -1,16 +1,20 @@
-import pathlib
-import textwrap
+#import pathlib
+#import textwrap
 import google.generativeai as genai
 
-import vertexai
-from vertexai.preview.generative_models import GenerativeModel, Part
+import requests
+#import genai
+
+#import vertexai
+#from vertexai.preview.generative_models import GenerativeModel, Part
 
 import time
-import requests
+#import requests
+
 
 def step2(qtext: str, model):
     response = model.generate_content(
-        qtext + " Then, answer the following question: does the patient have cataract surgery? Please answer yes, no, or no information.",
+       "Does the patient have cataract surgery? Please answer yes, no, or no information.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -48,7 +52,7 @@ def step3(qtext: str, model):
       step3(qtext, model)
     else:
       print(" is an exception")
-    
+      
 def step4(qtext: str, model):
     response = model.generate_content( 
         qtext +" Then, answer the following question: was the patient diagnosed with congenital, traumatic or juvenile cataract? Please answer yes, no or no information.",
@@ -125,15 +129,23 @@ def step7(qtext: str, model):
         print(' is excluded')
     else:
       print( " is an exception")
-        
+
+
 def step8(qtext: str, model):
     response = model.generate_content(
         qtext+ " Then, answer the following question: how many cataract diagnosis in the document? Please answer the number only."
     )
     candidates = response.candidates
     restext = multi2text(candidates)
-    print("Step10")
-    step10(qtext, model)
+    print(restext)
+    if is_int(restext):
+      if int(restext) >= 2 : 
+        print("Step10")
+        step10(qtext, model)
+    else :
+      print("Step9")
+      step9(qtext, model)
+
 
 def step9(qtext: str, model):
     response = model.generate_content(
@@ -156,7 +168,7 @@ def step9(qtext: str, model):
 
 def step10(qtext: str, model):
     response = model.generate_content(
-        qtext+ " Then, answer the following question: how old is the patient. Please answer age only numerically.",
+        qtext+ " Then, answer the following question: how old is the patient. Please answer age only numerically. If there is no information, please answer no information",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -194,9 +206,29 @@ genai.configure(api_key="xxx")
 
 dlist = [
   #pmid
-    '38068917',
-    '37904374',
-    '37899280',
+'31391702',
+'31332133',
+'31146719',
+'30900600',
+'30890130',
+'30882657',
+'30640280',
+'30606142',
+'30605941',
+'30605939',
+'30567140',
+'30181404',
+'30157798',
+'30029635',
+'29970067',
+'29786001',
+'29549136',
+'29450372',
+'29044088',
+'28974839',
+'28751510',
+'28746174',
+'28723783',
 ]
 
 ulist = [
@@ -206,11 +238,15 @@ ulist = [
 
 for pmid in dlist:
 #for docuri in ulist:    
-    r = requests.get("http://togows.org/entry/pubmed/"+pmid+"/abstract")
-    abstxt = r.text
-    qtext = "Read the following abstract: "+abstxt
-    # qtext = "Read the following paper with url: " + docuri  
+    r = requests.get("http://togows.org/entry/ncbi-pubmed/"+pmid+"/abstract")
+    #abstxt = r.text
+    #r = requests.get("https://pubmed.ncbi.nlm.nih.gov/"+pmid+"/")
     model = genai.GenerativeModel('gemini-pro')
+    #print(dir(model))
+    #model.process_html(r)
+    #qtext = ""
+    qtext = "Read the gievn abstract: " + r.text
+    #qtext = "Read the following paper with url: " + docuri  
     print(pmid)
     print("Step2")
     step2(qtext, model)
