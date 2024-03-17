@@ -1,20 +1,11 @@
-#import pathlib
-#import textwrap
 import google.generativeai as genai
-
 import requests
-#import genai
-
-#import vertexai
-#from vertexai.preview.generative_models import GenerativeModel, Part
-
 import time
-#import requests
 
 
 def step2(qtext: str, model):
     response = model.generate_content(
-       "Does the patient have cataract surgery? Please answer yes, no, or no information.",
+      "Does the patient have cataract surgery? Please answer yes, no, or no information.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -26,16 +17,12 @@ def step2(qtext: str, model):
     elif 'No' in str(restext) or 'no' in str(restext):
       print("Step3")
       step3(qtext, model)
-    elif 'access' in str(restext):
-      print("Try again")
-      time.sleep(3)
-      step2(qtext, model)
     else:
       print(" is an exception")
 
 def step3(qtext: str, model):
     response = model.generate_content(
-        qtext +" Then, answer the following question: was the patient diagnosed with cataract? Please answer yes, no, or no information.",
+        "Was the patient diagnosed with cataract? Please answer yes, no, or no information.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -46,16 +33,12 @@ def step3(qtext: str, model):
     elif 'No' in str(restext) or 'no' in str(restext) :
       print("Step4")
       step4(qtext, model)
-    elif 'access' in str(restext) :
-      print("Try again")
-      time.sleep(3)
-      step3(qtext, model)
     else:
       print(" is an exception")
       
 def step4(qtext: str, model):
     response = model.generate_content( 
-        qtext +" Then, answer the following question: was the patient diagnosed with congenital, traumatic or juvenile cataract? Please answer yes, no or no information.",
+        "Was the patient diagnosed with congenital, traumatic or juvenile cataract? Please answer yes, no or no information.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -65,16 +48,12 @@ def step4(qtext: str, model):
     elif 'No' in str(restext) or 'no' in str(restext) :
       print("Step5")
       step5(qtext, model)
-    elif 'access' in str(restext) :
-      print("Try again")
-      time.sleep(3)
-      step4(qtext, model)
     else:
       print(" is an exception")
 
 def step5(qtext: str, model):
     response = model.generate_content(
-        qtext +" Then, answer the following question: are there the term Cataract found in the document? Please answer yes, or no.",
+        "Are there the term Cataract found in the document? Please answer yes, or no.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -84,16 +63,12 @@ def step5(qtext: str, model):
     elif 'No' in str(restext) or 'no' in str(restext) :
       print("Step6")
       step6(qtext, model)
-    elif 'access' in str(restext) :
-      print("Try again")
-      time.sleep(3)
-      step5(qtext, model)
     else:
       print("an exception")
       
 def step6(qtext: str, model):
     response = model.generate_content(
-        qtext +" Then, answer the following question: how many years ago did the patient take optical examination. Please answer years only numerically. If there is no information about it, answer -1",
+      "How many years ago did the patient take optical examination. Please answer years only numerically. If there is no information about it, answer -1",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -113,15 +88,11 @@ def step6(qtext: str, model):
       
 def step7(qtext: str, model):
     response = model.generate_content(
-        qtext+ " Then, answer the following question: how old is the patient? Please answer age only numerically. Please answer the age only numerically. If there is no information about the age of the patient, please answer -1.",
+        "How old is the patient? Please answer the age only numerically. If there is no information, answer -1.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
     print(restext)    
-    if 'access' in str(restext) :
-      print('Try again')
-      time.sleep(3)
-      step10(qtext, model)
     if is_int(restext):
       if int(restext) > 49 :
         print(' is a control')
@@ -133,7 +104,7 @@ def step7(qtext: str, model):
 
 def step8(qtext: str, model):
     response = model.generate_content(
-        qtext+ " Then, answer the following question: how many cataract diagnosis are there in the document? Please answer the number only. If there is no information about the number, please answer -1."
+      "How many cataracts diagnosis in the document? Please answer the number only. If there is no information, please answer -1",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -145,12 +116,12 @@ def step8(qtext: str, model):
       else :
         print("Step9")
         step9(qtext, model)
-    else :
-      print( " is an exception")      
+    else:
+      print( " is an exception")
 
 def step9(qtext: str, model):
     response = model.generate_content(
-        qtext +" Then, answer the following question: are there the term Cataract found in the document? Please answer yes or no.",
+        "Are there the term Cataract found in the document? Please answer yes, or no.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -160,16 +131,12 @@ def step9(qtext: str, model):
       step10(qtext, model)
     elif 'No' in str(restext) or 'no' in str(restext) :
         print(' is excluded')
-    elif 'access' in str(restext) :
-      print("Try again")
-      time.sleep(3)
-      step5(qtext, model)
     else:
       print("an exception")
 
 def step10(qtext: str, model):
     response = model.generate_content(
-        qtext+ " Then, answer the following question: how old is the patient. Please answer the age only numerically. If there is no information about the age of the patient, please answer -1.",
+        "How old is the patient. Please answer age only numerically. If there is no information, please answer -1",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
