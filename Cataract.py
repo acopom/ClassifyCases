@@ -5,7 +5,7 @@ import time
 
 def step2(qtext: str, model):
     response = model.generate_content(
-      "Does the patient have cataract surgery? Please answer yes, no, or no information.",
+      qtext + " Does the patient have cataract surgery? Please answer yes, no, or no information.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -22,7 +22,7 @@ def step2(qtext: str, model):
 
 def step3(qtext: str, model):
     response = model.generate_content(
-        "Was the patient diagnosed with cataract? Please answer yes, no, or no information.",
+      qtext + " Was the patient diagnosed with cataract? Please answer yes, no, or no information.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -38,7 +38,7 @@ def step3(qtext: str, model):
       
 def step4(qtext: str, model):
     response = model.generate_content( 
-        "Was the patient diagnosed with congenital, traumatic or juvenile cataract? Please answer yes, no or no information.",
+      qtext + " Was the patient diagnosed with congenital, traumatic or juvenile cataract? Please answer yes, no or no information.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -53,7 +53,7 @@ def step4(qtext: str, model):
 
 def step5(qtext: str, model):
     response = model.generate_content(
-        "Are there the term Cataract found in the document? Please answer yes, or no.",
+      qtext + " Are there the term Cataract found in the asbtract? Please answer yes, or no.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -68,15 +68,11 @@ def step5(qtext: str, model):
       
 def step6(qtext: str, model):
     response = model.generate_content(
-      "How many years ago did the patient take optical examination. Please answer years only numerically. If there is no information about it, answer -1",
+      qtext + " How many years ago did the patient take optical examination. Please answer years only numerically. If there is no information about it, answer -1",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
     print(restext)    
-    if 'access' in str(restext) :
-      print('Try again')
-      time.sleep(3)
-      step6(qtext, model)
     elif is_int(restext):
       if int(restext) > 4 :
         print( 'excluded')
@@ -88,7 +84,7 @@ def step6(qtext: str, model):
       
 def step7(qtext: str, model):
     response = model.generate_content(
-        "How old is the patient? Please answer the age only numerically. If there is no information, answer -1.",
+      qtext + " How old is the patient? Please answer the age only numerically. If there is no information, answer -1.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -104,7 +100,7 @@ def step7(qtext: str, model):
 
 def step8(qtext: str, model):
     response = model.generate_content(
-      "How many cataracts diagnosis in the document? Please answer the number only. If there is no information, please answer -1",
+      qtext + " How many cataracts diagnosis in the document? Please answer the number only. If there is no information, please answer -1",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -121,7 +117,7 @@ def step8(qtext: str, model):
 
 def step9(qtext: str, model):
     response = model.generate_content(
-        "Are there the term Cataract found in the document? Please answer yes, or no.",
+      qtext + " Are there the term Cataract found in the document? Please answer yes, or no.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -136,15 +132,11 @@ def step9(qtext: str, model):
 
 def step10(qtext: str, model):
     response = model.generate_content(
-        "How old is the patient. Please answer age only numerically. If there is no information, please answer -1",
+       qtext + " How old is the patient. Please answer age only numerically. If there is no information, please answer -1",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
     print(restext)
-    if 'access' in str(restext) :
-      print('Try again')
-      time.sleep(3)
-      step10(qtext, model)
     elif is_int(restext):
       if int(restext) > 49 :
         print(' is a case')
@@ -213,7 +205,7 @@ for pmid in dlist:
     #print(dir(model))
     #model.process_html(r)
     #qtext = ""
-    qtext = "Read the gievn abstract: " + r.text
+    qtext = "Read the following abstract: " + r.text
     #qtext = "Read the following paper with url: " + docuri  
     print(pmid)
     print("Step2")
