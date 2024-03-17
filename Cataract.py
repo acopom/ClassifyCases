@@ -74,7 +74,7 @@ def step4(qtext: str, model):
 
 def step5(qtext: str, model):
     response = model.generate_content(
-        qtext +" Then, answer the following question: are there the term Cataract found in the document? Please answer yes, no or no information.",
+        qtext +" Then, answer the following question: are there the term Cataract found in the document? Please answer yes, or no.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -93,7 +93,7 @@ def step5(qtext: str, model):
       
 def step6(qtext: str, model):
     response = model.generate_content(
-        qtext +" Then, answer the following question: how many years ago did the patient take optical examination. Please answer years only numerically. If there is no information about it, answer null",
+        qtext +" Then, answer the following question: how many years ago did the patient take optical examination. Please answer years only numerically. If there is no information about it, answer -1",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -113,7 +113,7 @@ def step6(qtext: str, model):
       
 def step7(qtext: str, model):
     response = model.generate_content(
-        qtext+ " Then, answer the following question: how old is the patient? Please answer age only numerically. If there is no information, answer no information.",
+        qtext+ " Then, answer the following question: how old is the patient? Please answer age only numerically. Please answer the age only numerically. If there is no information about the age of the patient, please answer -1.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -133,7 +133,7 @@ def step7(qtext: str, model):
 
 def step8(qtext: str, model):
     response = model.generate_content(
-        qtext+ " Then, answer the following question: how many cataract diagnosis in the document? Please answer the number only."
+        qtext+ " Then, answer the following question: how many cataract diagnosis are there in the document? Please answer the number only. If there is no information about the number, please answer -1."
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -142,14 +142,15 @@ def step8(qtext: str, model):
       if int(restext) >= 2 : 
         print("Step10")
         step10(qtext, model)
+      else :
+        print("Step9")
+        step9(qtext, model)
     else :
-      print("Step9")
-      step9(qtext, model)
-
+      print( " is an exception")      
 
 def step9(qtext: str, model):
     response = model.generate_content(
-        qtext +" Then, answer the following question: are there the term Cataract found in the document? Please answer yes, no or no information.",
+        qtext +" Then, answer the following question: are there the term Cataract found in the document? Please answer yes or no.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
@@ -168,7 +169,7 @@ def step9(qtext: str, model):
 
 def step10(qtext: str, model):
     response = model.generate_content(
-        qtext+ " Then, answer the following question: how old is the patient. Please answer age only numerically. If there is no information, please answer no information",
+        qtext+ " Then, answer the following question: how old is the patient. Please answer the age only numerically. If there is no information about the age of the patient, please answer -1.",
     )
     candidates = response.candidates
     restext = multi2text(candidates)
