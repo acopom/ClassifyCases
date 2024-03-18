@@ -16,8 +16,12 @@ No information
 Step3
 Yes
 Step8
-
- is an exception
+-1
+Step9
+Yes
+Step10
+-1
+ is excluded
 ====
 37904374
 title: Self-limited corneal ectasia in a post-LASIK eye after cataract surgery: A case report.
@@ -41,7 +45,7 @@ Step10
 title: Surgical management of lifebuoy cataract.
 abstract: Lifebuoy cataract is a rare form of congenital cataract with anatomical characteristics. Herein, we present a case of an otherwise healthy 42-year-old female with a long-standing history of blurred vision. Examination showed the presence of esotropia and bilateral horizontal nystagmus. Visual acuity was limited to light perception in both eyes. Slit-lamp examination showed a calcified lens capsule with the absence of lens material in the right eye and the presence of an annular cataract in the left eye, corresponding to a unilateral lifebuoy cataract. She underwent cataract surgery with intraocular lens implantation. We report the clinical findings, anterior segment optical coherence tomography (AS-OCT), and surgical management tips. We noticed that during surgery, both anterior capsulorhexis and central membrane removal were the most challenging steps due to the absence of central nucleus and the strong adherence of central membrane to the anterior hyaloid.
 Step2
-yes
+Yes
 Step10
 42
  is excluded
@@ -59,7 +63,7 @@ Step10
 title: A case report of interstitial keratitis and secondary glaucoma after cataract surgery that may be related to late congenital syphilis.
 abstract: BACKGROUND: The destruction of blood eye barrier and the administration of corticosteroid eyedrops after phacoemulsification surgery can lead to the replication of the local potential pathogens. With the rapid increase and popularization of cataract surgery, all kinds of rare postoperative complications have appeared. Here, we report a case of interstitial keratitis and secondary glaucoma after cataract surgery, which may be related to late congenital syphilis, which eventually led to blindness in the right eye. We hope that the timely report of this case will enable doctors to pay more attention to the possibility of potential pathogen replication after cataract surgery, and enable more patients to receive reasonable and effective treatment. CASE PRESENTATION: A 63-year-old female was referred to our clinic for investigation with a 1-week history of moderate pain in the right eye and ipsilateral headache in January 2020. She had cataract surgery on her right eye two years ago and on her left eye one year ago. The intraocular pressure (IOP) in the right eye was 43.2 mmHg and that in the left eye was 28.5 mmHg. Her right eye underwent medication, trabeculectomy and finally was subjected to ciliary body photocoagulation to control the IOP. The IOP of the left eye was well controlled by regular use of eye drops. In addition to the elevated IOP, the inflammation of the anterior segment and corneal stroma was found. Before cataract surgery, bilateral corneal opacities was revealed, but after cataract surgery, interstitial keratitis in both eyes was gradually aggravated, during the follow-up period from 2019 to 2021. She informed us that she had suffered from decreased vision in both eyes and was diagnosed with bilateral keratitis and congenital syphilis at the age of 20. In 2018, the serologic test for syphilis was positive in blood (Chemiluminescence analysis (CLIA): + ; Toluidine red unheated serum test (TRUST): + , titer was 1:1). However, four tests for TRUST were negative in 2019 and 2020, so she was not treated for syphilis. CONCLUSION: This case of glaucoma and interstitial keratitis might be secondary to ocular inflammation caused by late congenital syphilis. The ocular inflammation and the activation of syphilis may be related to cataract surgery.
 Step2
-yes
+Yes
 Step10
 63
  is a case
@@ -110,7 +114,7 @@ Step10
 title: Prospective cholestanol screening of cerebrotendinous xanthomatosis among patients with juvenile-onset unexplained bilateral cataracts.
 abstract: BACKGROUND: Cerebrotendinous xanthomatosis (CTX) is a rare genetic disorder related to CYP27A1 biallelic mutations, leading to decreased synthesis of bile acids and increased cholestanol. Juvenile bilateral cataracts are one of the most common findings in the disease, frequently occurring before the onset of neurological manifestations. While early treatment with chenodeoxycholic acid can prevent the onset of neurological impairment, poor awareness of CTX accounts for a markedly delayed diagnosis. The objective of this study was to evaluate the utility of plasma cholestanol analysis at the moment of cataract diagnosis and before the onset of neurological impairment in CTX. METHODS: Multicenter prospective cohort study of patients with juvenile-onset unexplained bilateral cataracts recruited from seven French ophthalmology departments. Plasma cholestanol analysis was performed at diagnosis from January 2018 to January 2020. CYP27A1 genetic testing was performed at the ophthalmologist's discretion. Cholestanol levels were compared with those of a similar population of patients without cataracts (control cohort). RESULTS: 30 patients were finally recruited, with a mean age at cataract diagnosis of 7.1 years (± 4.8 SD, range 1-19 years). One patient had a very high cholestanol level (68 μmol/L, reference < 10) and carried two pathogenic heterozygous mutations in CYP27A1 confirming CTX. This patient was a 19-year-old female, reporting chronic diarrhea only in childhood, and diagnosed with bilateral posterior cataracts with cortical fleck-like opacities. Therefore, the incidence of CTX in our cohort of patients was 3.3%. Five further patients (5/29; 17.2%) had moderate elevations of cholestanol level (between 10.3 and 16.5 μmol/L), compared to 12/286 (4.2%) in the control cohort (p = 0.014) after adjustment for age. CONCLUSION: Our study argue for the relevance of plasma cholestanol CTX screening in all patients with juvenile-onset unexplained cataracts, even without other CTX identified manifestations. Whether moderate elevations of plasma cholestanol unrelated to CTX may be a risk factor for bilateral cataracts occurrence needs further examination.
 Step2
-No information in the provided context
+No information
 Step3
 Yes
 Step8
@@ -123,7 +127,7 @@ Step10
 title: Life-threatening hypotension in the immediate postoperative period of cataract surgery under topical anesthesia: a report of two cases.
 abstract: BACKGROUND: Cataract surgery is one of the most frequent surgeries in the world. It is a very safe procedure mostly performed under topical anesthesia in outpatients centers. Due to the growing lack of anesthesiologists, cataract surgeries are more frequently performed without an anesthesiologist present in the operating room. Although extremely rare, life-threatening complications may occur. CASES PRESENTATION: We report two cases of cataract surgery complicated by severe hypotension that required emergency resuscitation in the immediate postoperative period and hospitalization in intensive care unit. Anaphylactic shock was confirmed in the first case and suspected in the second. CONCLUSIONS AND IMPORTANCE: Even though cataract surgery is a very safe procedure, it is essential to ensure the presence of an anesthesiologist to manage potential, though extremely rare, life-threatening complications such as anaphylactic reactions.
 Step2
-Yes
+yes
 Step10
 -1
  is excluded
@@ -168,7 +172,7 @@ Step10
 title: Bilateral posterior scleritis after sequential bilateral cataract surgery: a case report.
 abstract: BACKGROUND: Posterior scleritis is a rare, inflammatory ophthalmic disease, leading to severe visual impairment if untreated. Posterior scleritis occurring after surgery, unrelated to systemic inflammatory diseases, is even rarer. This report discusses a case of bilateral posterior scleritis, after cataract surgery in both the eyes, treated with high-dose steroids. CASE PRESENTATION: A 55-year-old man, who had undergone bilateral sequential cataract surgery one week before, presented with sudden loss of vision and ocular pain in both eyes. The patient had no systemic diseases or neurological symptoms. Serous retinal detachment of the macula with optic disc swelling was observed on fundus examination in both the eyes, and bilateral thickening of choroid and sclera was seen in ultrasonography. Under diagnosis of bilateral posterior scleritis due to the increased signal of sclera in both the eyes on magnetic resonance imaging, high-dose steroid therapy was performed. After treatment, improvement in visual acuity and retinal detachment were observed, and thereafter, it has been maintained without relapse. CONCLUSIONS: With high-dose steroid therapy, we successfully treated a rare case of bilateral posterior scleritis following cataract surgery in both eyes. To our knowledge, this is the first report on posterior scleritis occurring after surgery, unrelated to systemic inflammatory diseases.
 Step2
-yes
+Yes
 Step10
 55
  is a case
@@ -230,7 +234,7 @@ Yes
 Step8
 -1
 Step9
-yes
+Yes
 Step10
 -1
  is excluded
@@ -239,7 +243,7 @@ Step10
 title: Herpetic uveitis caused by herpes simplex virus after cataract surgery in a patient without prior viral keratitis or uveitis: a case report.
 abstract: BACKGROUND: To report a case of herpetic uveitis caused by herpes simplex virus after cataract surgery in a patient without prior viral keratitis or uveitis. CASE PRESENTATION: A 70-year-old female was referred to our clinic with a 16-day history of acute blurry vision with painful redness in the right eye. She accepted cataract surgery for the right eye ten days before initial of ocular symptoms. There was significant inflammation in anterior chamber of the right eye. Retina exam showed moderate dense vitreous opacity but not necrotic or focal retinal lesion in the right eye. The aqueous humor collected from the right eye was positive for herpes simplex virus (HSV) DNA by PCR. The diagnosis of herpetic uveitis in the right eye was made due to clinical presentations and aqueous humor examination. CONCLUSION: Herpetic virus reactivation might occasionally occur after intraocular surgery in patients without prior ocular viral diseases, inducing atypical postoperative intraocular inflammation.
 Step2
-yes
+Yes
 Step10
 70
  is a case
@@ -273,18 +277,12 @@ Step4
 No information
 Step5
 yes
-excluded
+ is excluded
 ====
 35036658
 title: Lens-induced uveitis in a patient with hypermature cataract.
 abstract: <b>Objective:</b> Our paper aims to report an unusual case of phacogenic uveitis with secondary glaucoma occurring after spontaneous rupture of the lens capsule in a patient with hypermature age-related cataract, to describe its particularities and to review the classification of the lens-induced uveitis. <b>Methods:</b> We described the case of an 83-year-old male with a history of hypermature cataract, who presented to our clinic for right eye pain. Examination revealed circumciliary congestion, diffuse corneal edema, lens debris floating in the anterior chamber, pseudohypopyon and the opacification of the whole lens. An elevated intraocular pressure was also associated. We did not observe any history of previous intraocular surgery or trauma. <b>Results:</b> We diagnosed the case as a phacogenic uveitis with secondary glaucoma and we planned to remove the inflammation trigger, namely the lens and its fragments by the most adequate technique, in order to control the inflammation and the IOP spikes, to alleviate the pain and to improve the patient's visual function and the quality of life. <b>Conclusions:</b> Phacogenic uveitis may present a cloudy cornea and a turbid anterior chamber that mimics endophthalmitis. Careful examination, medical history and ancillary investigations are helpful in establishing an accurate diagnosis and the appropriate treatment can reduce or eliminate the inflammation completely, decrease the intraocular pressure, being able to allow, depending on the particularities of the case, the visual gain.
 Step2
-No information
-Step3
-Yes
-Step8
--1
-Step9
 Yes
 Step10
 83
@@ -312,7 +310,7 @@ Step10
 title: How many challenges we may encounter in anterior megalophthalmos with white cataract: a case report.
 abstract: BACKGROUND: Anterior megalophthalmos is a rare congenital disease which mainly features enlargement of the anterior segment. Cataract surgeries in anterior megalophthalmos can be challenging due to the anatomical anomalies while the studies upon the surgical design have been less integrated. CASE PRESENTATION: A 37-year-old woman presented with progressively blurred vision in the right eye after a transient fever 10 months ago. Her ocular history included hypermetropia with a spherical equivalent of + 4.00 OU. The review of systems showed bilateral varus deformity of distal interphalangeal joints on the little fingers. The patient denied family history of hereditary ocular diseases and her sister was born with uterus didelphys. On initial examinations, the corrected distance visual acuity was hand motion OD and 20/33 OS. Her intraocular pressure was 15 mmHg OD and 16 mmHg OS. Horizontal corneal diameter was 14 mm OD and 13.88 mm OS and axial length was 24.87 mm OD and 25 mm OS. Anterior segment photography showed bilateral iridal atrophy with deficiency in pupillary dilation and white cortically mature cataract in the right eye. Inspection by anterior segment optical coherence tomography indicated bilateral augmented anterior chambers with backward iridal concave on horizontal orientation. Ultrasound biomicroscopy showed partially peripheral anterior synechiae and pectinate ligaments at chamber angle in both eyes and opacified lens with the apparently elongated suspensory ligaments in the right eye. A deliberately selected 1-piece foldable intraocular lens (IOL) with frame haptics was implanted after phacoemulsification for good IOL stability. During the follow-up, the visual rehabilitation appeared relatively good and a lower degree of IOL dislocation comparing with existing reports was verified by OPD-Scan III aberrometry. CONCLUSIONS: We presented the challenges and the original findings from a case of congenital anterior megalophthalmos with white cataract who underwent phacoemulsification and IOL implantation. This is the first report describing the comparison of the different IOL power calculation formulas in anterior megalophthalmos. Compared to the SRK/T and the Holladay II formulas, the Haigis formula could be a more accurate choice for the IOL calculation in anterior megalophthalmos according to our case. Moreover, the deliberate selection of IOLs is essential for IOL stability in these patients.
 Step2
-yes
+Yes
 Step10
 37
  is excluded
@@ -348,7 +346,7 @@ Step10
 title: Rapid progression of cataract to mature stage after intravitreal dexamethasone implant injection: a case report.
 abstract: BACKGROUND: This study aims to report a case of rapid progression of cataract to mature stage after intravitreal dexamethasone implantation for macular edema due to branch retinal vein occlusion. CASE PRESENTATION: A 59-year-old Korean male with complaints of sudden metamorphopsia and reduced visual acuity for three days in the left eye was referred to our clinic. Ophthalmological investigations included fundus photography, fluorescein angiography, and optical coherence tomography. In the left eye, branch retinal vein occlusion with macular edema was observed. We performed intravitreal dexamethasone implantation in the left eye three times within a period of one year. One week after the third intravitreal dexamethasone implantation, grade 1 posterior subcapsular opacity and raised intraocular pressure were observed in the left eye. Three weeks later, mature cataract was observed in the left eye. We performed cataract surgery along with intravitreal ranibizumab injection in the left eye. The procedure was uneventful, and the visual acuity improved postoperatively. CONCLUSIONS: Posterior subcapsular cataract developed due to intravitreal dexamethasone implantation can progress rapidly to mature stage. Therefore, short-term follow-up examinations may be necessary for early diagnosis and treatment of this complication.
 Step2
-Yes
+yes
 Step10
 59
  is a case
@@ -408,7 +406,7 @@ Step10
 title: Femtosecond laser-assisted cataract surgery with implantation of a diffractive trifocal intraocular lens after laser in situ keratomileusis: a case report.
 abstract: BACKGROUND: We report for the first time, a case of femtosecond laser-assisted cataract surgery (FLACS) with implantation of a diffractive trifocal intraocular lens (IOL) after laser in situ keratomileusis (LASIK). CASE PRESENTATION: A 60-year-old man underwent FLACS uneventfully 15 years after myopic LASIK. An AT Lisa tri 839MP IOL was implanted with the expectation of spectacle independence. The Haigis-L formula was chosen for calculation of the IOL power and it provided reliable results. Three months postoperatively, the uncorrected visual acuities were 0.00 logMAR for distance, 0.10 logMAR for intermediate, and 0.10 logMAR for near. CONCLUSIONS: This case suggested that FLACS presents a feasible surgical technique for post-LASIK eyes and that implantation of trifocal IOL can achieve good visual performance in strictly selected cases after myopic LASIK.
 Step2
-yes
+Yes
 Step10
 60
  is a case
@@ -417,7 +415,7 @@ Step10
 title: Sequential cataract surgeries in a patient with a left ventricular assist device (LVAD).
 abstract: The population of patients on left ventricular assist devices (LVADs) has increased significantly since the 1990s, and with it, need for non-cardiac elective surgeries. Presence of an LVAD or heart failure, however, can cause physicians to perceive these patients to be at prohibitively high risk for elective surgery. Nevertheless, as one of the most common causes of poor vision in the elderly, cataracts can significantly limit improvements in quality of life that a patient may have otherwise gained from LVAD support. We describe the case of a 62-year-old man with an LVAD who underwent two uncomplicated sequential cataract surgeries following extensive cardiology evaluations and intraoperative monitoring by anaesthesia without intravenous sedation. The patient reported significant improvement in visual acuity and quality of life. Our case demonstrates the potential benefits of conducting cataract surgery relatively early in the disease course in patients with LVAD devices.
 Step2
-yes
+Yes
 Step10
 62
  is a case
@@ -517,7 +515,7 @@ Step8
 title: Siderotic cataract with no signs of intraocular foreign body.
 abstract: BACKGROUND: Ocular siderosis is a clinical condition induced by deposition of an iron-containing intraocular foreign body. We report a unique case of histopathologically proven lens siderosis in a young woman with a preceding history of trauma but no signs of retained intraocular foreign body. CASE PRESENTATION: A 32-year-old woman presented with an opacified lens showing brownish deposits on the anterior capsule and underwent cataract surgery. Preoperative ophthalmic examination did not show any retained intraocular foreign body. Histopathologic staining of the anterior capsule confirmed the presence of iron deposits and macrophages. Electroretinography examination performed in the postoperative period showed the changes characteristic of retinal degeneration in ocular siderosis. CONCLUSION: This case illustrates the importance of close monitoring of patients with a history of trauma or previous penetrating injury to the eye, even if there is no intraocular foreign body, because they might develop ocular siderosis at a later stage. This case report underscores the importance of electroretinography and histopathologic analysis, in addition to ophthalmic examination, in the diagnosis of ocular siderosis.
 Step2
-Yes
+yes
 Step10
 32
  is excluded
@@ -535,7 +533,7 @@ Step10
 title: A case of perforating injury of eyeball and traumatic cataract caused by acupuncture.
 abstract: Perforating globe injury is the leading cause of monocular blindness and vision loss. A 58-year-old male was injured by acupuncture needle during acupuncture treatment for his cerebral infarction. To the best of our knowledge, this is the first case report of perforating injury of the eyeball and traumatic cataract caused by acupuncture. The patient was hospitalized due to diagnosis of perforating ocular injury, traumatic cataract, and corneal and iris perforating injury. Moreover, he had to accept treatments of phacoemulsification, anterior vitrectomy along with intraocular lens implantation in the sulcus to improve his visual acuity. As acupuncture therapy has been widely performed for various diseases and achieved highly approval, the aim of this report is to remind acupuncturists operating accurately to avoid unnecessary injury during the treatment process, or the cure can also become the weapon.
 Step2
-yes
+Yes
 Step10
 58
  is a case

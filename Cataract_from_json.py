@@ -61,12 +61,12 @@ def step5(qtext: str, model):
     restext = multi2text(candidates)
     print(restext)
     if 'Yes' in str(restext) or 'yes' in str(restext) :
-      print("excluded")
+      print(" is excluded")
     elif 'No' in str(restext) or 'no' in str(restext) :
       print("Step6")
       step6(qtext, model)
     else:
-      print("an exception")
+      print(" is an exception")
       
 def step6(qtext: str, model):
     response = model.generate_content(
@@ -77,12 +77,12 @@ def step6(qtext: str, model):
     print(restext)    
     if is_int(restext):
       if int(restext) > 4 :
-        print( 'excluded')
+        print(' is excluded')
       elif int(restext) < 5 :
         print("Step7")
         step7(qtext, model)
     else:
-      print("an exception")
+      print(" is an exception")
       
 def step7(qtext: str, model):
     response = model.generate_content(
@@ -131,7 +131,7 @@ def step9(qtext: str, model):
     elif 'No' in str(restext) or 'no' in str(restext) :
         print(' is excluded')
     else:
-      print("an exception")
+      print(" is an exception")
 
 def step10(qtext: str, model):
     response = model.generate_content(

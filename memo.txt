@@ -5,3 +5,15 @@ python ./Cataract_from_json.py ./cataract.maru.json > ./cataract.maru.json.resul
 
 # execute Gemini for the not cataract file
 python ./Cataract_from_json.py ./not_cataract.all.json > ./not_cataract.all.json.result 2>&1
+
+# stats: result
+## maru
+egrep "^ is a case" cataract.maru.json.result |wc -l
+egrep "^ is a control" cataract.maru.json.result |wc -l
+egrep "^ is excluded" cataract.maru.json.result |wc -l
+egrep "^ is an exception" cataract.maru.json.result |wc -l
+## not
+egrep "^ is a case" not_cataract.all.json.result |wc -l
+egrep "^ is a control" not_cataract.all.json.result |wc -l
+egrep "^ is excluded" not_cataract.all.json.result |wc -l
+egrep "^ is an exception" not_cataract.all.json.result |wc -l
