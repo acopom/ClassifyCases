@@ -1,0 +1,7 @@
+
+# execute Gemini for the maru file
+python ./Cataract_from_json.py ./cataract.maru.json > ./cataract.maru.json.result 2>&1
+
+
+# execute Gemini for the not cataract file
+python ./Cataract_from_json.py ./not_cataract.all.json > ./not_cataract.all.json.result 2>&1
